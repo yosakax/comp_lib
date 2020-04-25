@@ -14,7 +14,7 @@ def make_prime_nums(N):
     prime_tf = [True for _ in range(N+1)]
     prime_tf[0] = False
     prime_tf[1] = False
-    for i in range(N+1):
+    for i in range(2, N+1):
         if prime_tf[i]:
             if eratosthenes(i):
                 for j in range(i*2, N+1, i):
