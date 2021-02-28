@@ -1,18 +1,22 @@
-# coding: utf-8
-
-def dijkstra(s, cost, used, V):
-    d = [float("inf") for _ in range(V)]
-    used = [False for _ in range(V)]
+import heapq
+def dijkstra(s, N):
+    # 始点から各頂点への最短距離
+    d = [float('inf')]*N
     d[s] = 0
-    while True:
-        v = -1
-        for u in range(V):
-            if not used[u] and (v == -1 or d[u] < d[v]):
-                v = u
-        if v == -1:
-            break
+    # 各頂点が訪問済みかどうか
+    used = [False]*N
+    used[s] = True
+    # 仮の距離を記録するヒープ
+    que = []
+    for e in g[s]:
+        heapq.heappush(que, e)
+    while que:
+        u, v = heapq.heappop(que)
+        if used[v]:
+            continue
+        d[v] = u
         used[v] = True
-        for u in range(V):
-            d[u] = min(d[u], d[v] + cost[v][u])
+        for e in g[v]:
+            if not used[e[1]]:
+                heapq.heappush(que, [e[0] + d[v], e[1]])
     return d
-
