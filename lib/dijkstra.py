@@ -1,4 +1,6 @@
 from heapq import heappop, heappush
+
+
 def dijkstra(s, N, adj):
     dist = [float("inf")] * N
     visited = [False] * N
@@ -12,6 +14,7 @@ def dijkstra(s, N, adj):
                 dist[to] = dist[v] + cost
                 heappush(queue, (dist[to], to))
     return dist
+
 
 """AOJ sample
 from heapq import heappop, heappush
