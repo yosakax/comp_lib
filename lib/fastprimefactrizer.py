@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-
+# example:https://atcoder.jp/contests/abc177/tasks/abc177_e
 class FastPrimeFactorizer:
     """高速素因数分解"""
 
