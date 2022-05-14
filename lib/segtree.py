@@ -7,7 +7,7 @@ class SegmentTree:
 
     __all__ = ["setval", "pointupdate", "segquery", "segsearch_right", "pointgetval"]
 
-    def __init__(self, n=10 ** 6, idetify_elt=-(10 ** 9), func=max):
+    def __init__(self, n=10**6, idetify_elt=-(10**9), func=max):
         assert func(idetify_elt, idetify_elt) == idetify_elt
         self._n = n
         self._seg_length_half = 2 ** (n - 1).bit_length()

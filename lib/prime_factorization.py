@@ -1,5 +1,3 @@
-#coding: utf-8
-
 def prime_factorization(N):
     # 辞書型で素因数分解を返す
     pf = {}

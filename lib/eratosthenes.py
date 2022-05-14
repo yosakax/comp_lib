@@ -1,4 +1,3 @@
-# coding: utf-8
 def eratosthenes(N):
     # 素数判定
     flag = True
